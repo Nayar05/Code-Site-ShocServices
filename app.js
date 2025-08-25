@@ -10,7 +10,7 @@
 // Option A : service sans backend (FormSubmit)
 // 1) Remplacez par votre e‑mail ci-dessous.
 // 2) Optionnel : ajoutez sur FormSubmit le domaine autorisé.
-const FORM_EMAIL = "rayan.habib05@gmail.com"; // ← à remplacer
+const FORM_EMAIL = "said.taibi@hotmail.fr"; // ← à remplacer
 
 // Option B : votre backend (PHP/Node/etc.)
 // Exemple d’endpoint custom : "/api/send-mail" (à coder côté serveur)
