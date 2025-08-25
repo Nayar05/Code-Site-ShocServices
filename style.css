@@ -1,0 +1,161 @@
+/* ===========================
+   Shoc Services – Styles
+   - Palette basée sur le logo
+   - Design minimal (couleurs + structure)
+   =========================== */
+
+/* Palette (ajuste librement) */
+:root{
+  --blue-900:#0f2a4a;   /* bleu profond */
+  --blue-700:#134a8c;   /* bleu principal */
+  --blue-500:#1f73d1;   /* accent clair */
+  --blue-100:#eaf2fd;   /* fond clair */
+  --ink-900:#0b1220;    /* texte */
+  --ink-600:#3e4a5b;    /* texte secondaire */
+  --ink-200:#cdd6e1;    /* séparateurs */
+  --white:#ffffff;
+  --accent:#f5c845;     /* clin d'œil à l'éclair (optionnel) */
+  --radius:18px;
+  --shadow:0 10px 25px rgba(19,74,140,.10);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color:var(--ink-900);
+  line-height:1.6;
+  background: #fff;
+}
+
+img{max-width:100%;height:auto;display:block}
+
+/* Accessibilité */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px;border-radius:8px}
+
+/* Containers */
+.container{width:min(1120px, 92%);margin-inline:auto}
+
+/* Header / Nav */
+.header{
+  position:sticky;top:0;z-index:1000;background:var(--white);
+  box-shadow:0 2px 16px rgba(0,0,0,.06);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0px 0}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink-900);gap:10px}
+.brand-name{font-weight:700;font-size:1.125rem;letter-spacing:.2px}
+
+.menu{display:flex;align-items:center;gap:18px;list-style:none;margin:0;padding:0}
+.menu a{
+  text-decoration:none;color:var(--ink-900);padding:8px 10px;border-radius:10px;
+}
+.menu .nav-link:hover{background:var(--blue-100)}
+.btn-cta{
+  background:var(--blue-700);color:#fff;border-radius:999px;padding:10px 16px;
+  box-shadow:var(--shadow);
+}
+.btn-cta:hover{background:var(--blue-500)}
+
+/* Boutons */
+.btn{
+  display:inline-block;padding:12px 18px;border-radius:999px;border:none;
+  background:var(--blue-700);color:#fff;text-decoration:none;box-shadow:var(--shadow)
+}
+.btn:hover{background:var(--blue-500)}
+.btn-ghost{
+  display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid var(--ink-200);
+  background:#fff;color:var(--ink-900);text-decoration:none
+}
+.btn-ghost:hover{border-color:var(--blue-500);color:var(--blue-700)}
+
+/* Hero */
+.hero{
+  background: radial-gradient(1200px 400px at 20% -10%, var(--blue-100), transparent) ,
+              linear-gradient(180deg, #fff, #fff);
+  border-bottom:1px solid var(--ink-200);
+}
+.hero-inner{padding:56px 0 40px; text-align: center}
+.hero h1{font-size:2rem;line-height:1.25;margin:0 0 10px;text-align: center}
+.hero p{max-width:58ch;color:var(--ink-600);margin:0 0 18px;text-align: center;margin-inline:auto}
+.accent{color:var(--blue-700)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content: center}
+
+/* Sections */
+.section{padding:56px 0}
+.section.alt{background:var(--blue-100)}
+.section h2{font-size:1.6rem;margin:0 0 8px}
+.section-intro{color:var(--ink-600);margin:0 0 24px}
+
+/* Grilles & cartes */
+.grid-3{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+
+.card{
+  background:#fff;border:1px solid var(--ink-200);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow)
+}
+.card h3{margin-top:0}
+
+/* Chips (secteurs) */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  background:#fff;border:1px solid var(--ink-200);padding:8px 12px;border-radius:999px
+}
+
+/* À propos */
+.about{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:24px}
+@media (max-width:900px){.about{grid-template-columns:1fr}}
+.about-badge{
+  display:grid;place-items:center;
+  font-size:72px;border-radius:24px;background:#fff;border:1px solid var(--ink-200);
+  aspect-ratio:1/1;box-shadow:var(--shadow)
+}
+.checklist{padding-left:18px}
+.checklist li{margin:6px 0}
+
+/* Formulaire */
+.form{background:#fff;border:1px solid var(--ink-200);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:900px){.form-row{grid-template-columns:1fr}}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  border:1px solid var(--ink-200);border-radius:12px;padding:12px;font:inherit
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  outline:2px solid var(--blue-500);border-color:transparent
+}
+.form-meta{margin:10px 0}
+.checkbox{display:flex;gap:10px;align-items:flex-start}
+.checkbox input{margin-top:4px}
+.form-status{margin:10px 0 0;color:var(--ink-600)}
+.hp{display:none} /* honeypot */
+
+/* Footer */
+.footer{background:var(--blue-900);color:#dfe7f5;margin-top:40px}
+.footer h3{color:#fff}
+.footer a{color:#dfe7f5;text-decoration:none}
+.footer a:hover{color:#fff}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:24px;padding:24px 0
+}
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0}
+.footer-legal{
+  border-top:1px solid rgba(255,255,255,.15);
+  display:flex;gap:14px;justify-content:space-between;align-items:center;padding:14px 0
+}
+
+
+html {
+  scroll-behavior: smooth;    /* conserve le scroll fluide */
+  scroll-padding-top: 80px;   /* valeur = hauteur approximative de ton header */
+}
